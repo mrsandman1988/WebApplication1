@@ -1,0 +1,44 @@
+﻿@using WebApplication1.ViewModels.Students
+@using WebApplication1.ViewModels.Faculties
+@model StudentAddEditViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEdit</title>
+</head>
+<body>
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <div>
+            <label>
+                First Name
+                <input asp-for="FirstName" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Last Name
+                <input asp-for="LastName" />
+            </label>
+        </div>
+
+        <div>
+            <label>Please select faculty</label>
+            <select asp-for="FacultyId">
+                <option>---Please select---</option>
+                @foreach(FacultyDropdownViewModel item in ViewBag.Faculty)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
