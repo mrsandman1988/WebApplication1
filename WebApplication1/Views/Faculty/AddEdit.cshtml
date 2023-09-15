@@ -1,0 +1,29 @@
+﻿@using WebApplication1.ViewModels.Faculties
+@model FacultyAddEdit
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEdit</title>
+</head>
+<body>
+    <form method="post">
+        <input type="hidden" value="@ViewBag.Token" />
+        <input type="hidden" asp-for="Id" />
+        <label>
+            <input asp-for="Name"/>
+        </label>
+        <label>
+            <input asp-for="RoomCount"/>
+        </label>
+        <button type="submit">
+            Save
+        </button>
+    </form>
+</body>
+</html>
